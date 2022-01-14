@@ -44,15 +44,6 @@ const login = createLayout(
     }
 );
 
-// const notFound = createLayout(
-//     <div className='outer'>
-//         <div className="outer">
-//             <div className="inner">
-//                 <h1>404 Page Not Found</h1>
-//             </div>
-//         </div>
-//     </div>
-// );
 const notFound = (
     <div className='outer'>
         <div className="outer">
