@@ -1,0 +1,11 @@
+{
+  "name": "glaze-ui-examples",
+  "private": true,
+  "scripts": {
+    "start": "node_modules/.bin/lerna run --parallel start",
+    "bootstrap": "lerna exec npm install"
+  },
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
