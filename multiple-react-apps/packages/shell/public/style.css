@@ -21,6 +21,11 @@ body {
   
 }
 
+*[glaze] h4 {
+  text-align: center;
+  font-size: 12px;
+}
+
 .layout { 
     display: flex;
     flex-direction: column;

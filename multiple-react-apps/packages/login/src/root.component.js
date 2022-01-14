@@ -22,6 +22,7 @@ const Root = props => {
     <form>
 
         <h3>Log in</h3>
+        <h4>Use any user/pass combination</h4>
 
         <div className="form-group">
             <label>Email</label>
