@@ -5,10 +5,13 @@
 
 ## Examples available
 * [Multiple React Apps](#multiple-react-apps)
+  
+**_`More examples coming soon`_**
 
 <br />
 
 ## Multiple React Apps
+_Run the command below_
 ```bash
 git clone https://github.com/yoda-libs/glaze-ui-examples
 cd glaze-ui-examples/multiple-react-apps
