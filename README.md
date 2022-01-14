@@ -11,7 +11,7 @@
 <br />
 
 ## Multiple React Apps
-_Run the command below_
+_Run the command below..._
 ```bash
 git clone https://github.com/yoda-libs/glaze-ui-examples
 cd glaze-ui-examples/multiple-react-apps
@@ -19,3 +19,4 @@ npm install
 npm run bootstrap
 npm start
 ```
+_..and open `http://localhost:9000`_
