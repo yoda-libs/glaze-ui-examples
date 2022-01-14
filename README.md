@@ -19,4 +19,4 @@ npm install
 npm run bootstrap
 npm start
 ```
-_..and open `http://localhost:9000`_
+_...and open `http://localhost:9000`_
