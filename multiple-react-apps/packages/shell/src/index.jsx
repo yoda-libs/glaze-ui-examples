@@ -31,7 +31,7 @@ const mainLayout = (template, contentApp) => createLayout(
     footer: apps['footer'],
 });
 
-const login = createLayout(
+const loginLayout = createLayout(
     <div className='outer'>
         <div className="outer">
             <div className="inner">
@@ -44,7 +44,7 @@ const login = createLayout(
     }
 );
 
-const notFound = (
+const notFoundTemplate = (
     <div className='outer'>
         <div className="outer">
             <div className="inner">
@@ -77,8 +77,10 @@ const authMiddleware = async (ctx, next) => {
 const router = createRoutes([
     authMiddleware,
     route('/', mainLayout('', apps['todo'])),
-    route('/login', login),
-    defaultRoute(mainLayout(notFound, blankApp))
+    route('/login', loginLayout),
+    defaultRoute(
+        mainLayout(notFoundTemplate, blankApp)
+    )
 ])
 
 
