@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "start": "node_modules/.bin/lerna run --parallel start",
-    "bootstrap": "node_modules/.bin/lerna exec npm install"
+    "bootstrap": "node_modules/.bin/lerna exec npm install",
+    "build": "node_modules/.bin/lerna exec npm run build"
   },
   "devDependencies": {
     "lerna": "^4.0.0"
