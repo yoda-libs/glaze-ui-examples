@@ -1,12 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { DefinePlugin } = require('webpack');
-const env = require('./env');
 
 module.exports = (_, options) => {
   const isDev = options.mode !== 'production';
-
-  const base_url = isDev ? env.base_url.dev : env.base_url.prod;
 
   return {
     mode: 'production',
@@ -40,9 +37,14 @@ module.exports = (_, options) => {
             inject : "body",
             scriptLoading: "blocking"
         }),
-        new DefinePlugin({
-          'BASE_URL': JSON.stringify(base_url)
-        })
+        new DefinePlugin(
+          isDev ? {} : {
+            'NAVBAR_URL': JSON.stringify('https://yoda-libs.github.io/glaze-ui-examples/navbar.js'),
+            'TODO_URL': JSON.stringify('https://yoda-libs.github.io/glaze-ui-examples/todo.js'),
+            'FOOTER_URL': JSON.stringify('https://yoda-libs.github.io/glaze-ui-examples/footer.js'),
+            'LOGIN_URL': JSON.stringify('https://yoda-libs.github.io/glaze-ui-examples/login.js'),
+          }
+        )
     ]
   }
 }

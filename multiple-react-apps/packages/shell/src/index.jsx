@@ -4,14 +4,22 @@ import {
     createApps, app, blankApp,
     createRoutes, route, defaultRoute,
     createLayout, createElement
-} from 'glaze-ui';
+// } from 'glaze-ui';
+} from '../../../../../glaze-ui/dist';
+
+// urls injected by webpack for production
+var urls = {
+    navbar: NAVBAR_URL,
+    todo: TODO_URL,
+    footer: FOOTER_URL,
+    login: LOGIN_URL,
+}
 
 const apps = createApps([
-    // BASE_URL  injected by webpack
-    app('navbar', BASE_URL + '/navbar.js'),
-    app('todo', BASE_URL + '/todo.js'),
-    app('footer', BASE_URL + '/footer.js'),
-    app('login', BASE_URL + '/login.js'),
+    app('navbar', urls?.navbar ?? 'http://localhost:8081/navbar.js'),
+    app('todo', urls?.todo ?? 'http://localhost:8082/todo.js'),
+    app('footer', urls?.footer ?? 'http://localhost:8083/footer.js'),
+    app('login', urls?.login ?? 'http://localhost:8084/login.js'),
 ]);
 
 
