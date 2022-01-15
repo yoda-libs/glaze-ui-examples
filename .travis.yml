@@ -22,3 +22,4 @@ jobs:
         local_dir: multiple-react-apps/dist
         on:
           branch: main
+          
