@@ -4,19 +4,20 @@ node_js:
 cache:
   directories:
   - node_modules
-matrix:
+jobs:
   fast_finish: true
   include:
     - env: node_js
       before_script:
         - cd ${TRAVIS_BUILD_DIR}/multiple-react-apps
         - npm install
+        - npm run bootstrap
       script:
         - npm run build
 deploy:
   provider: pages
-  skip_cleanup: true
-  github_token: $github_token
+  cleanup: false
+  github_token: $token
   local_dir: dist
   on:
     branch: main
