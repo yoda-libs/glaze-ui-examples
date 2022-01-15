@@ -100,7 +100,10 @@ bootstrap({
         'react': 'https://unpkg.com/react@17.0.2/umd/react.development.js',
         'react-dom': 'https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js',
     },
-    options: { debug: true }
+    options: { 
+        debug: true,
+        baseUrl: 'https://yoda-libs.github.io/glaze-ui-examples/'
+    }
 }).then(async glaze => {
     // example on how to send a message to a glaze app
     glaze.dispatch({test: "message"});
