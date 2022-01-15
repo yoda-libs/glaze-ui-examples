@@ -34,12 +34,8 @@ function copyFileSync( source, target ) {
     writeFileSync(targetFile, readFileSync(source));
 }
 
-function copyFolderRecursiveSync( source, target ) {
+function copyFilesRecursiveSync( source, target ) {
     var files = [];
-
-    // Check if folder needs to be created or integrated
-    var targetFolder = path.join( target, path.basename( source ) );
-    ensureFolderExists( targetFolder );
 
     // Copy
     if ( lstatSync( source ).isDirectory() ) {
@@ -47,9 +43,9 @@ function copyFolderRecursiveSync( source, target ) {
         files.forEach( function ( file ) {
             var curSource = path.join( source, file );
             if ( lstatSync( curSource ).isDirectory() ) {
-                copyFolderRecursiveSync( curSource, targetFolder );
+                copyFolderRecursiveSync( curSource, target );
             } else {
-                copyFileSync( curSource, targetFolder );
+                copyFileSync( curSource, target );
             }
         } );
     }
@@ -66,8 +62,11 @@ const getDirectories = (source) => {
 const packages = getDirectories(`${process.cwd()}/packages`);
 for(let package of packages) {
     const packageDist = `${process.cwd()}/packages/${package}/dist`;
+    const packagePublic = `${process.cwd()}/packages/${package}/public`;
     if (!existsSync(packageDist))
         throw new Error(`${packageDist} does not exist. Run 'npm run build' in ${package}`);
 
-    copyFolderRecursiveSync(packageDist, process.cwd());
+    if (existsSync(packagePublic))
+        copyFilesRecursiveSync(packagePublic, distFolder);
+    copyFilesRecursiveSync(packageDist, distFolder);
 }
