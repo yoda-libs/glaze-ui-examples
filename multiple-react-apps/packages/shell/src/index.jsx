@@ -6,19 +6,12 @@ import {
     createLayout, createElement
 } from 'glaze-ui';
 
-// urls injected by webpack for production
-var urls = {
-    navbar: NAVBAR_URL,
-    todo: TODO_URL,
-    footer: FOOTER_URL,
-    login: LOGIN_URL,
-}
-
+// urls injected by webpack
 const apps = createApps([
-    app('navbar', urls?.navbar ?? 'http://localhost:8081/navbar.js'),
-    app('todo', urls?.todo ?? 'http://localhost:8082/todo.js'),
-    app('footer', urls?.footer ?? 'http://localhost:8083/footer.js'),
-    app('login', urls?.login ?? 'http://localhost:8084/login.js'),
+    app('navbar', NAVBAR_URL),
+    app('todo', TODO_URL),
+    app('footer', FOOTER_URL),
+    app('login', LOGIN_URL),
 ]);
 
 
