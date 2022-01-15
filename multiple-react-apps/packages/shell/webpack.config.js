@@ -1,7 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { DefinePlugin } = require('webpack');
+const env = require('./env');
 
-module.exports = {
+module.exports = (_, options) => {
+  const isDev = options.mode !== 'production';
+
+  const base_url = isDev ? env.base_url.dev : env.base_url.prod;
+
+  return {
     mode: 'production',
     entry: './src/index.jsx',
     output: {
@@ -31,7 +38,11 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: "./src/index.html",
             inject : "body",
-            scriptLoading: "blocking",
+            scriptLoading: "blocking"
         }),
+        new DefinePlugin({
+          'BASE_URL': JSON.stringify(base_url)
+        })
     ]
-};
+  }
+}
