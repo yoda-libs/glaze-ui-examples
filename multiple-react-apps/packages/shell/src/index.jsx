@@ -102,7 +102,7 @@ bootstrap({
     },
     options: { 
         debug: true,
-        baseUrl: 'https://yoda-libs.github.io/glaze-ui-examples/'
+        baseUrl: '/dist'
     }
 }).then(async glaze => {
     // example on how to send a message to a glaze app

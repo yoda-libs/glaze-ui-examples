@@ -43,7 +43,7 @@ function copyFilesRecursiveSync( source, target ) {
         files.forEach( function ( file ) {
             var curSource = path.join( source, file );
             if ( lstatSync( curSource ).isDirectory() ) {
-                copyFolderRecursiveSync( curSource, target );
+                copyFilesRecursiveSync( curSource, target );
             } else {
                 copyFileSync( curSource, target );
             }
