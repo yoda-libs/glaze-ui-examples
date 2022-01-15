@@ -4,8 +4,7 @@ import {
     createApps, app, blankApp,
     createRoutes, route, defaultRoute,
     createLayout, createElement
-// } from 'glaze-ui';
-} from '../../../../../glaze-ui/dist';
+} from 'glaze-ui';
 
 // urls injected by webpack for production
 var urls = {
