@@ -4,7 +4,6 @@ node_js:
 cache:
   directories:
   - node_modules
-strategy: git
 jobs:
   fast_finish: true
   include:
@@ -17,8 +16,9 @@ jobs:
         - npm run build
       deploy:
         provider: pages
+        strategy: git
         cleanup: false
-        github_token: $GITHUB_TOKEN
-        local_dir: dist
+        token: $GITHUB_TOKEN
+        local_dir: multiple-react-apps/dist
         on:
           branch: main
