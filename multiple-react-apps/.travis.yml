@@ -4,8 +4,15 @@ node_js:
 cache:
   directories:
   - node_modules
-script:
-  - npm run build
+matrix:
+  fast_finish: true
+  include:
+    - env: node_js
+      before_script:
+        - cd ${TRAVIS_BUILD_DIR}/multiple-react-apps
+        - npm install
+      script:
+        - npm run build
 deploy:
   provider: pages
   skip_cleanup: true
