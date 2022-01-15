@@ -102,7 +102,7 @@ bootstrap({
     },
     options: { 
         debug: true,
-        baseUrl: '/multiple-react-apps',
+        baseUrl: '/glaze-ui-examples',
     }
 }).then(async glaze => {
     // example on how to send a message to a glaze app
