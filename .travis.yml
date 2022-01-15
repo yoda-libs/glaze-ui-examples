@@ -19,7 +19,7 @@ jobs:
         strategy: git
         skip_cleanup: true
         token: $GITHUB_TOKEN
+        keep_history: false
         local_dir: multiple-react-apps/dist
         on:
           branch: main
-          
