@@ -75,8 +75,8 @@ const getDirectories = (source) => {
 // build all example projects
 const examples = getDirectories(`${process.cwd()}/examples`);
 for(let example of examples) {
-    const bootstrapCommand = `node_modules/.bin/lerna exec npm install`;
-    const buildCommand = `node_modules/.bin/lerna exec npm run build`;
+    const bootstrapCommand = `cd ${process.cwd()}/examples/${example} && node_modules/.bin/lerna exec npm install`;
+    const buildCommand = `cd ${examples}/${example} && node_modules/.bin/lerna exec npm run build`;
 
     console.log('Installing packages in', example);
     runCommand(bootstrapCommand);
