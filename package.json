@@ -1,0 +1,15 @@
+{
+  "name": "glaze-ui-examples",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/yoda-libs/glaze-ui-examples.git",
+  "author": "Juliano Teixeira <jzucchetto@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "bootstrap": "lerna exec npm install",
+    "build": "lerna exec npm run build"
+  },
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
