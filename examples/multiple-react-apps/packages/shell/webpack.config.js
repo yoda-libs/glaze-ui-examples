@@ -44,10 +44,10 @@ module.exports = (_, options) => {
             'FOOTER_URL': JSON.stringify('http://localhost:8083/footer.js'),
             'LOGIN_URL': JSON.stringify('http://localhost:8084/login.js'),
           } : {
-            'NAVBAR_URL': JSON.stringify('https://yoda-libs.github.io/glaze-ui-examples/navbar.js'),
-            'TODO_URL': JSON.stringify('https://yoda-libs.github.io/glaze-ui-examples/todo.js'),
-            'FOOTER_URL': JSON.stringify('https://yoda-libs.github.io/glaze-ui-examples/footer.js'),
-            'LOGIN_URL': JSON.stringify('https://yoda-libs.github.io/glaze-ui-examples/login.js'),
+            'NAVBAR_URL': JSON.stringify('https://yoda-libs.github.io/glaze-ui-examples/multiple-react-apps/navbar.js'),
+            'TODO_URL': JSON.stringify('https://yoda-libs.github.io/glaze-ui-examples/multiple-react-apps/todo.js'),
+            'FOOTER_URL': JSON.stringify('https://yoda-libs.github.io/glaze-ui-examples/multiple-react-apps/footer.js'),
+            'LOGIN_URL': JSON.stringify('https://yoda-libs.github.io/glaze-ui-examples/multiple-react-apps/login.js'),
           }
         )
     ]
