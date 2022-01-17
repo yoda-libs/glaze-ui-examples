@@ -5,6 +5,7 @@
 
 ## Examples available
 * [Multiple React Apps](#multiple-react-apps)
+  * [Live demo](https://yoda-libs.github.io/glaze-ui-examples/multiple-react-apps/) here
   
 **_`More examples coming soon`_**
 
@@ -14,7 +15,7 @@
 _Run the command below..._
 ```bash
 git clone https://github.com/yoda-libs/glaze-ui-examples
-cd glaze-ui-examples/multiple-react-apps
+cd glaze-ui-examples/examples/multiple-react-apps
 npm install
 npm run bootstrap
 npm start
