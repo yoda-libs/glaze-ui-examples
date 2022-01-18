@@ -5,12 +5,28 @@ const { DefinePlugin } = require('webpack');
 module.exports = (_, options) => {
   const isDev = options.mode !== 'production';
 
+  const urls = isDev ? {
+    'NAVBAR_URL': JSON.stringify('http://localhost:8081/navbar.js'),
+    'TODO_URL': JSON.stringify('http://localhost:8082/todo.js'),
+    'FOOTER_URL': JSON.stringify('http://localhost:8083/footer.js'),
+    'LOGIN_URL': JSON.stringify('http://localhost:8084/login.js'),
+  } : {
+    'NAVBAR_URL': JSON.stringify('https://yoda-libs.github.io/glaze-ui-examples/multiple-react-apps/navbar.js'),
+    'TODO_URL': JSON.stringify('https://yoda-libs.github.io/glaze-ui-examples/multiple-react-apps/todo.js'),
+    'FOOTER_URL': JSON.stringify('https://yoda-libs.github.io/glaze-ui-examples/multiple-react-apps/footer.js'),
+    'LOGIN_URL': JSON.stringify('https://yoda-libs.github.io/glaze-ui-examples/multiple-react-apps/login.js'),
+  }
+
+
   return {
     mode: 'production',
     entry: './src/index.jsx',
     output: {
         path: path.resolve(__dirname, 'dist'), // output directory
         filename: "[name].js" // name of the generated bundle
+    },
+    optimization: {
+      minimize: !isDev
     },
     module: {
         rules: [
@@ -37,19 +53,7 @@ module.exports = (_, options) => {
             inject : "body",
             scriptLoading: "blocking"
         }),
-        new DefinePlugin(
-          isDev ? {
-            'NAVBAR_URL': JSON.stringify('http://localhost:8081/navbar.js'),
-            'TODO_URL': JSON.stringify('http://localhost:8082/todo.js'),
-            'FOOTER_URL': JSON.stringify('http://localhost:8083/footer.js'),
-            'LOGIN_URL': JSON.stringify('http://localhost:8084/login.js'),
-          } : {
-            'NAVBAR_URL': JSON.stringify('https://yoda-libs.github.io/glaze-ui-examples/multiple-react-apps/navbar.js'),
-            'TODO_URL': JSON.stringify('https://yoda-libs.github.io/glaze-ui-examples/multiple-react-apps/todo.js'),
-            'FOOTER_URL': JSON.stringify('https://yoda-libs.github.io/glaze-ui-examples/multiple-react-apps/footer.js'),
-            'LOGIN_URL': JSON.stringify('https://yoda-libs.github.io/glaze-ui-examples/multiple-react-apps/login.js'),
-          }
-        )
+        new DefinePlugin(urls)
     ]
   }
 }

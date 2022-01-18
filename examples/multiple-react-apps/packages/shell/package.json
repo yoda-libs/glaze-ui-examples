@@ -29,6 +29,6 @@
     "webpack-dev-server": "^4.6.0"
   },
   "dependencies": {
-    "glaze-ui": "^1.0.20"
+    "glaze-ui": "latest"
   }
 }
