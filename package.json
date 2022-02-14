@@ -8,7 +8,6 @@
   "scripts": {
     "bootstrap": "lerna exec npm install",
     "build": "node scripts/build.js"
-    
   },
   "devDependencies": {
     "lerna": "^4.0.0",

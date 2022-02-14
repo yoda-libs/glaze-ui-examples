@@ -53,7 +53,10 @@ module.exports = (_, options) => {
             inject : "body",
             scriptLoading: "blocking"
         }),
-        new DefinePlugin(urls)
+        new DefinePlugin({
+          ...urls,
+          "IS_DEV": isDev
+        })
     ]
   }
 }
